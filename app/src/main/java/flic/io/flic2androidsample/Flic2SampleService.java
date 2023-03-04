@@ -18,6 +18,14 @@ public class Flic2SampleService extends Service {
     private final String NOTIFICATION_CHANNEL_ID = "Notification_Channel_Flic2SampleService";
     private final CharSequence NOTIFICATION_CHANNEL_NAME = "Flic2Sample";
 
+
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        super.onTaskRemoved(rootIntent);
+        stopSelf();
+
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
